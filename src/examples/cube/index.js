@@ -9,7 +9,7 @@ const control = () => {
 	const dirLightProps = useControls('Directional Light', {
 		castShadow: true,
 		receiveShadow: false,
-		intensity: 1,
+		intensity: { value: 1, min: 0.5, max: 5, step: 0.5 },
 		position: [-10, 8, -5],
 	});
 
