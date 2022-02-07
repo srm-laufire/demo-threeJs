@@ -54,7 +54,7 @@ const degToPos = (angle, distance) =>
 const changeAngle = (angle) => 180 - angle;
 
 // eslint-disable-next-line max-lines-per-function
-const DemoSphere = () => {
+const ShadowDemo = () => {
 	const { planeProps, dirLightProps, sphereProps,
 		satelliteProps, angleProps } = control();
 	const { color, scale: sScale, ...sProps } = sphereProps;
@@ -95,4 +95,4 @@ const DemoSphere = () => {
 	</>;
 };
 
-export default DemoSphere;
+export default ShadowDemo;

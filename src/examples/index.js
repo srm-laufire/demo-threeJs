@@ -2,10 +2,10 @@ import Cube from './cube';
 import Box from './box';
 import CircleDemo from './circle';
 import RotatingCircle from './rotatingCircle';
-import Sphere from './sphere';
+import ShadowDemo from './sphere';
 
 const examples = {
-	Sphere,
+	ShadowDemo,
 	Cube,
 	Box,
 	CircleDemo,
