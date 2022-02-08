@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 /* eslint-disable no-magic-numbers */
 import React from 'react';
 import { useControls } from 'leva';
@@ -53,13 +54,12 @@ const degToPos = (angle, distance) =>
 
 const changeAngle = (angle) => 180 - angle;
 
-// eslint-disable-next-line max-lines-per-function
-const ShadowDemo = () => {
+const ShadowDemo = ({ state: { ticks: angle }}) => {
 	const { planeProps, dirLightProps, sphereProps,
 		satelliteProps, angleProps } = control();
 	const { color, scale: sScale, ...sProps } = sphereProps;
 	const { color: pColor, ...pProps } = planeProps;
-	const { angle, distance } = angleProps;
+	const { distance } = angleProps;
 	const { scale, satellite, distance: sDistance } = satelliteProps;
 	const getRadian = degToRad(changeAngle(angle));
 	const { x, y } = degToPos(getRadian, distance);

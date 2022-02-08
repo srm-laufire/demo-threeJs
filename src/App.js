@@ -1,9 +1,10 @@
 import { Environment, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { folder, useControls } from 'leva';
-import { React, Suspense } from 'react';
+import { React, Suspense, useEffect } from 'react';
 import './App.scss';
 import examples from './examples';
+import Ticker from './core/ticker';
 
 const getInput = () => useControls({
 	Example: {
@@ -26,14 +27,16 @@ const getInput = () => useControls({
 	}, { collapsed: true }),
 });
 
-const App = () => {
+const App = (context) => {
+	useEffect(Ticker.start, []);
+
 	const { Example, color, orbitControl, environment, preset } = getInput();
 
 	return (
 		<div className="App" role="App">
 			<Canvas style={ { background: color } } shadows={ true }>
 				<Suspense fallback={ null }>
-					<Example/>
+					<Example { ...context }/>
 					{ environment
 			&& <Environment background={ true } preset={ preset }/>}
 				</Suspense>
