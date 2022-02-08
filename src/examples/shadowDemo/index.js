@@ -8,7 +8,7 @@ import { degToRad } from 'three/src/math/MathUtils';
 const control = () => {
 	const angleProps = useControls('Angle', {
 		angle: { value: 0, min: 0, max: 180, step: 1 },
-		distance: { value: 2, min: 1, max: 10, step: 0.5 },
+		distance: { value: 2, min: 1, max: 10, step: 0.1 },
 	});
 
 	const dirLightProps = useControls('Directional Light', {
@@ -21,7 +21,7 @@ const control = () => {
 		args: [0.7, 300, 300],
 		scale: 0.2,
 		satellite: true,
-		distance: 1.5,
+		distance: 1.1,
 	});
 
 	const sphereProps = useControls('Sphere', {
