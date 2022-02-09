@@ -34,7 +34,12 @@ const App = (context) => {
 
 	return (
 		<div className="App" role="App">
-			<Canvas style={ { background: color } } shadows={ true }>
+			<Canvas
+				style={ { background: color } }
+				shadows={ true }
+				// eslint-disable-next-line no-magic-numbers
+				camera={ { position: [0, 0, 35] } }
+			>
 				<Suspense fallback={ null }>
 					<Example { ...context }/>
 					{ environment
