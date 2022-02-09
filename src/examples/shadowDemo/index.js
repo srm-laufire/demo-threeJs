@@ -64,7 +64,7 @@ const ShadowDemo = (context) => {
 	const { color: pColor, ...pProps } = planeProps;
 	const { distance } = angleProps;
 	const { scale, satellite, distance: sDistance } = satelliteProps;
-	const getRadian = degToRad(changeAngle((getAngle(context), 'angle')));
+	const getRadian = degToRad(changeAngle(getAngle(context)));
 	const { x, y } = degToPos(getRadian, distance);
 	const { x: sPosX, y: sPosY } = degToPos(getRadian, sDistance);
 	const satProps = {
