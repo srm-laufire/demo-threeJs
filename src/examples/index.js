@@ -4,8 +4,10 @@ import CircleDemo from './circle';
 import RotatingCircle from './rotatingCircle';
 import ShadowDemo from './shadowDemo';
 import FlightModel from './flightModel';
+import Torus from './torusModel';
 
 const examples = {
+	Torus,
 	FlightModel,
 	ShadowDemo,
 	Cube,
