@@ -4,6 +4,7 @@ import React from 'react';
 import { useControls } from 'leva';
 import { Plane } from '@react-three/drei';
 import { degToRad } from 'three/src/math/MathUtils';
+import ShadowManager from '../../services/shadowManager';
 
 // eslint-disable-next-line max-lines-per-function
 const control = () => {
@@ -54,14 +55,16 @@ const degToPos = (angle, distance) =>
 
 const changeAngle = (angle) => 180 - angle;
 
-const ShadowDemo = ({ state: { ticks: angle }}) => {
+// eslint-disable-next-line max-statements
+const ShadowDemo = (context) => {
+	const { getAngle } = ShadowManager;
 	const { planeProps, dirLightProps, sphereProps,
 		satelliteProps, angleProps } = control();
 	const { color, scale: sScale, ...sProps } = sphereProps;
 	const { color: pColor, ...pProps } = planeProps;
 	const { distance } = angleProps;
 	const { scale, satellite, distance: sDistance } = satelliteProps;
-	const getRadian = degToRad(changeAngle(angle));
+	const getRadian = degToRad(changeAngle((getAngle(context), 'angle')));
 	const { x, y } = degToPos(getRadian, distance);
 	const { x: sPosX, y: sPosY } = degToPos(getRadian, sDistance);
 	const satProps = {

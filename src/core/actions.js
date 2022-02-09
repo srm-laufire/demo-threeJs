@@ -1,11 +1,11 @@
-import AngleManager from '../services/angleManager';
+import ShadowManager from '../services/shadowManager';
 
-const getAngle = (context) => ({
-	ticks: AngleManager.getAngle(context),
+const tickIncrement = (context) => ({
+	ticks: ShadowManager.tickIncrement(context),
 });
 
 const actions = {
-	getAngle,
+	tickIncrement,
 };
 
 export default actions;

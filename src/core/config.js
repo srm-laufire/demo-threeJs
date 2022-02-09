@@ -1,7 +1,8 @@
 const config = {
 	incrementValue: 1,
-	incrementAngle: 60,
-	tickerDelay: 1000,
+	fullRotateDelay: 60,
+	tickerDelay: 100,
+	degree: 360,
 };
 
 export default config;
