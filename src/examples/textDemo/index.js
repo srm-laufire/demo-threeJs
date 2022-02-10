@@ -29,7 +29,7 @@ const control = () => {
 // eslint-disable-next-line max-lines-per-function
 const TextDemo = () => {
 	const { textProps, configProps } = control();
-	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-tamil.json`);
+	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-hindi.json`);
 	const config = useMemo(() => ({
 		font,
 		...configProps,
@@ -40,7 +40,7 @@ const TextDemo = () => {
 	return (
 		<mesh ref={ mesh } { ...textProps }>
 			<textGeometry
-				args={ ['லாஃபயர்', config] }
+				args={ ['लौफायर', config] }
 			/>
 			<meshNormalMaterial/>
 		</mesh>
