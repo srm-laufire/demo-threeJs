@@ -12,27 +12,35 @@ const control = () => {
 		position: [-15, 0, 0],
 	});
 
-	return { textProps };
+	const configProps = useControls('Config', {
+		size: 5,
+		height: 1,
+		curveSegments: 5,
+		bevelEnabled: true,
+		bevelThickness: 1,
+		bevelSize: 0.5,
+		bevelOffset: 0,
+		bevelSegments: 2,
+	});
+
+	return { textProps, configProps };
 };
 
 // eslint-disable-next-line max-lines-per-function
 const TextDemo = () => {
-	const { textProps } = control();
-	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-Medium.json`);
+	const { textProps, configProps } = control();
+	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-tamil.json`);
 	const config = useMemo(() => ({
-		font: font,
-		size: 5, height: 1,
-		curveSegments: 5,
-		bevelEnabled: true, bevelThickness: 1,
-		bevelSize: 0.5, bevelOffset: 0, bevelSegments: 2,
+		font,
+		...configProps,
 	}),
-	[font]);
+	[font, configProps]);
 	const mesh = useRef();
 
 	return (
 		<mesh ref={ mesh } { ...textProps }>
 			<textGeometry
-				args={ ['LAUFIRE', config] }
+				args={ ['லாஃபயர்', config] }
 			/>
 			<meshNormalMaterial/>
 		</mesh>
