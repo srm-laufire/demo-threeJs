@@ -3,8 +3,8 @@ import context from '../../core/context';
 const start = () => {
 	const { config: { tickerDelay }} = context;
 
-	context.actions.tickIncrement();
-	setInterval(context.actions.tickIncrement, tickerDelay);
+	context.actions.tick();
+	setInterval(context.actions.tick, tickerDelay);
 };
 
 const Ticker = {

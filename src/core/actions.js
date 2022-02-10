@@ -1,11 +1,9 @@
-import ShadowManager from '../services/shadowManager';
-
-const tickIncrement = (context) => ({
-	ticks: ShadowManager.tickIncrement(context),
+const tick = ({ state: { ticks }, config: { incrementValue }}) => ({
+	ticks: ticks + incrementValue,
 });
 
 const actions = {
-	tickIncrement,
+	tick,
 };
 
 export default actions;

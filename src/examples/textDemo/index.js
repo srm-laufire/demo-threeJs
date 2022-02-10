@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers */
-import React, { useMemo, useRef } from 'react';
+import React from 'react';
 import { extend, useLoader } from '@react-three/fiber';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
@@ -9,38 +9,33 @@ extend({ TextGeometry });
 
 const control = () => {
 	const textProps = useControls('Text', {
-		position: [-15, 0, 0],
-	});
-
-	const configProps = useControls('Config', {
-		size: 5,
-		height: 1,
-		curveSegments: 5,
+		position: [-7, 0, -4],
+		size: { value: 2, min: 0.5, max: 5, step: 0.5 },
+		height: { value: 0.05, min: 0.01, max: 5, step: 0.01 },
+		curveSegments: { value: 5, min: 0.5, max: 10, step: 0.5 },
 		bevelEnabled: true,
-		bevelThickness: 1,
-		bevelSize: 0.5,
-		bevelOffset: 0,
-		bevelSegments: 2,
+		bevelThickness: { value: 2, min: 0.5, max: 5, step: 0.5 },
+		bevelSize: { value: 0.2, min: 0, max: 5, step: 0.1 },
+		bevelOffset: { value: 0, min: 0, max: 5, step: 0.1 },
+		bevelSegments: { value: 3, min: 0.5, max: 5, step: 0.5 },
 	});
 
-	return { textProps, configProps };
+	return { textProps };
 };
 
-// eslint-disable-next-line max-lines-per-function
 const TextDemo = () => {
-	const { textProps, configProps } = control();
-	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-hindi.json`);
-	const config = useMemo(() => ({
-		font,
-		...configProps,
-	}),
-	[font, configProps]);
-	const mesh = useRef();
+	const { textProps } = control();
+	const { position, ...props } = textProps;
+	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-Medium.json`);
 
 	return (
-		<mesh ref={ mesh } { ...textProps }>
+		<mesh
+			castShadow={ true }
+			receiveShadow={ true }
+			position={ position }
+		>
 			<textGeometry
-				args={ ['लौफायर', config] }
+				args={ ['LAUFIRE', { font, ...props }] }
 			/>
 			<meshNormalMaterial/>
 		</mesh>

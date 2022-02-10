@@ -9,9 +9,9 @@ import TextDemo from './textDemo';
 
 const examples = {
 	TextDemo,
+	ShadowDemo,
 	Torus,
 	FlightModel,
-	ShadowDemo,
 	Cube,
 	Box,
 	CircleDemo,
