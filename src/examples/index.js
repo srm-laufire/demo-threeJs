@@ -6,8 +6,10 @@ import ShadowDemo from './shadowDemo';
 import FlightModel from './flightModel';
 import Torus from './torusModel';
 import TextDemo from './textDemo';
+import ThreeDHello from './threeDTextExample';
 
 const examples = {
+	ThreeDHello,
 	TextDemo,
 	ShadowDemo,
 	Torus,
