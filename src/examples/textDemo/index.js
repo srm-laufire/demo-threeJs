@@ -9,13 +9,15 @@ extend({ TextGeometry });
 
 const control = () => {
 	const textProps = useControls('Text', {
-		position: [-7, 0, -4],
-		size: { value: 2, min: 0.5, max: 5, step: 0.5 },
-		height: { value: 0.05, min: 0.01, max: 5, step: 0.01 },
+		text: 'Laufire Technologies,\nChennai,\n600115.',
+		position: [-3, 2, 0],
+		rotation: [0.2, 0, 0],
+		size: { value: 0.5, min: 0.5, max: 5, step: 0.5 },
+		height: { value: 0.2, min: 0.01, max: 5, step: 0.01 },
 		curveSegments: { value: 5, min: 0.5, max: 10, step: 0.5 },
 		bevelEnabled: true,
-		bevelThickness: { value: 2, min: 0.5, max: 5, step: 0.5 },
-		bevelSize: { value: 0.2, min: 0, max: 5, step: 0.1 },
+		bevelThickness: { value: 1, min: 0.5, max: 5, step: 0.5 },
+		bevelSize: { value: 0, min: 0, max: 5, step: 0.1 },
 		bevelOffset: { value: 0, min: 0, max: 5, step: 0.1 },
 		bevelSegments: { value: 3, min: 0.5, max: 5, step: 0.5 },
 	});
@@ -25,7 +27,7 @@ const control = () => {
 
 const TextDemo = () => {
 	const { textProps } = control();
-	const { position, ...props } = textProps;
+	const { text, position, rotation, ...props } = textProps;
 	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-Medium.json`);
 
 	return (
@@ -33,9 +35,10 @@ const TextDemo = () => {
 			castShadow={ true }
 			receiveShadow={ true }
 			position={ position }
+			rotation={ rotation }
 		>
 			<textGeometry
-				args={ ['LAUFIRE', { font, ...props }] }
+				args={ [text, { font, ...props }] }
 			/>
 			<meshNormalMaterial/>
 		</mesh>

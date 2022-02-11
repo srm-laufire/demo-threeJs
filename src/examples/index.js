@@ -9,8 +9,8 @@ import TextDemo from './textDemo';
 import ThreeDHello from './threeDTextExample';
 
 const examples = {
-	ThreeDHello,
 	TextDemo,
+	ThreeDHello,
 	ShadowDemo,
 	Torus,
 	FlightModel,
