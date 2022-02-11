@@ -27,8 +27,8 @@ const control = () => {
 
 // eslint-disable-next-line max-statements
 const ShadowDemo = (context) => {
-	const { tickToAngle } = Converters;
-	const { invertAngle, degToPos } = AngleManager;
+	const { tickToAngle, degToPos } = Converters;
+	const { invertAngle } = AngleManager;
 	const { sphereProps, satelliteProps } = control();
 	const { color, scale: sScale, ...sProps } = sphereProps;
 	const { scale, satellite, distance: sDistance } = satelliteProps;

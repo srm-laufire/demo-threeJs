@@ -8,7 +8,7 @@ import './App.scss';
 import examples from './examples';
 import Ticker from './core/ticker';
 import { degToRad } from 'three/src/math/MathUtils';
-import AngleManager from './services/angleManager';
+import Converters from './converters';
 
 // eslint-disable-next-line max-lines-per-function
 const getInput = () => {
@@ -58,7 +58,7 @@ const getInput = () => {
 // eslint-disable-next-line max-lines-per-function
 const App = (context) => {
 	useEffect(Ticker.start, []);
-	const { degToPos } = AngleManager;
+	const { degToPos } = Converters;
 
 	const { appProps, planeProps, dirLightProps } = getInput();
 	const { angle, distance, ...props } = dirLightProps;
