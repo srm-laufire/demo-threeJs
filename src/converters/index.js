@@ -7,6 +7,10 @@ const Converters = {
 	degToPos: (angle, distance) =>
 		({ x: distance * getRoundedValue(Math.cos(angle)),
 			y: distance * getRoundedValue(Math.sin(angle)) }),
+
+	tickToColor: ({ config: { colorChangeDelay, colors },
+		state: { ticks }}) =>
+		colors[Math.floor(ticks / colorChangeDelay) % colors.length],
 };
 
 export default Converters;
