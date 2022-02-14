@@ -7,9 +7,11 @@ import FlightModel from './flightModel';
 import Torus from './torusModel';
 import TextDemo from './textDemo';
 import ThreeDHello from './threeDTextExample';
+import AlignmentExample from './sampleThreeD';
 
 const examples = {
 	TextDemo,
+	AlignmentExample,
 	ThreeDHello,
 	ShadowDemo,
 	Torus,
