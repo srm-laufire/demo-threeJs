@@ -4,8 +4,7 @@ import { extend, useLoader } from '@react-three/fiber';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 import { useControls } from 'leva';
-import { useTexture } from '@react-three/drei';
-import texture from '../../images/texture.jpg';
+import Converters from '../../converters';
 
 extend({ TextGeometry });
 
@@ -17,7 +16,7 @@ const control = () => {
 		size: { value: 0.5, min: 0.5, max: 5, step: 0.5 },
 		height: { value: 0.2, min: 0.01, max: 5, step: 0.01 },
 		curveSegments: { value: 5, min: 0.5, max: 10, step: 0.5 },
-		bevelEnabled: true,
+		bevelEnabled: false,
 		bevelThickness: { value: 1, min: 0.5, max: 5, step: 0.5 },
 		bevelSize: { value: 0, min: 0, max: 5, step: 0.1 },
 		bevelOffset: { value: 0, min: 0, max: 5, step: 0.1 },
@@ -28,11 +27,11 @@ const control = () => {
 };
 
 // eslint-disable-next-line max-lines-per-function
-const TextDemo = () => {
+const TextDemo = (context) => {
 	const { textProps } = control();
+	const { tickToColor } = Converters;
 	const { text, position, rotation, ...props } = textProps;
 	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-Medium.json`);
-	const [colorMap] = useTexture([texture]);
 
 	return (
 		<mesh
@@ -44,9 +43,7 @@ const TextDemo = () => {
 			<textGeometry
 				args={ [text, { font, ...props }] }
 			/>
-			<meshStandardMaterial
-				map={ colorMap }
-			/>
+			<meshPhongMaterial color={ tickToColor(context) }/>
 		</mesh>
 	);
 };
