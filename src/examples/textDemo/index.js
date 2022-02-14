@@ -4,6 +4,8 @@ import { extend, useLoader } from '@react-three/fiber';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 import { useControls } from 'leva';
+import { useTexture } from '@react-three/drei';
+import texture from '../../images/texture.jpg';
 
 extend({ TextGeometry });
 
@@ -25,10 +27,12 @@ const control = () => {
 	return { textProps };
 };
 
+// eslint-disable-next-line max-lines-per-function
 const TextDemo = () => {
 	const { textProps } = control();
 	const { text, position, rotation, ...props } = textProps;
 	const font = useLoader(FontLoader, `${ process.env.PUBLIC_URL }/roboto-Medium.json`);
+	const [colorMap] = useTexture([texture]);
 
 	return (
 		<mesh
@@ -40,7 +44,9 @@ const TextDemo = () => {
 			<textGeometry
 				args={ [text, { font, ...props }] }
 			/>
-			<meshNormalMaterial/>
+			<meshStandardMaterial
+				map={ colorMap }
+			/>
 		</mesh>
 	);
 };
