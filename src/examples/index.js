@@ -10,8 +10,8 @@ import ThreeDHello from './threeDTextExample';
 import AlignmentExample from './sampleThreeD';
 
 const examples = {
-	TextDemo,
 	AlignmentExample,
+	TextDemo,
 	ThreeDHello,
 	ShadowDemo,
 	Torus,
