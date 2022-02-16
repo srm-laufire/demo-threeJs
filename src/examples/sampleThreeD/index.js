@@ -5,7 +5,7 @@ import { useControls } from 'leva';
 
 // eslint-disable-next-line max-lines-per-function
 const control = () => useControls('Text alignment', {
-	text: 'Laufire Technologies,\nChennai,\n600115.',
+	text: 'LAUFIRE',
 	anchorX: 'center',
 	anchorY: 'bottom',
 	color: 'red',
@@ -17,15 +17,15 @@ const control = () => useControls('Text alignment', {
 	outlineOpacity: { value: 1, min: 0, max: 1, step: 0.01 },
 	outlineOffsetX: { value: 0, min: -0.5, max: 0.5, step: 0.1 },
 	outlineOffsetY: { value: 0, min: -0.5, max: 0.5, step: 0.1 },
-	outlineBlur: { value: -0.5, min: -0.5, max: 0.5, step: 0.1 },
+	outlineBlur: { value: 0.07, min: -0.5, max: 0.5, step: 0.1 },
 	strokeOpacity: { value: 10, min: -0.5, max: 10, step: 0.1 },
 	strokeWidth: { value: 0, min: -0.9, max: 0.9, step: 0.1 },
 	fillOpacity: { value: 0.82, min: 0, max: 1, step: 0.01 },
-	scale: { value: 11, min: 0, max: 50, step: 0.5 },
+	scale: { value: 20, min: 0, max: 50, step: 0.5 },
 	fontSize: { value: 0.1, min: 0, max: 5, step: 0.5 },
 	maxWidth: { value: 1, min: 0, max: 5, step: 0.5 },
 	letterSpacing: { value: 0.01, min: 0, max: 5, step: 0.05 },
-	lineHeight: { value: 1, min: 0, max: 5, step: 0.5 },
+	lineHeight: { value: 0.5, min: 0, max: 5, step: 0.5 },
 	curveRadius: { value: 0, min: 0, max: 5, step: 0.5 },
 });
 
