@@ -2,6 +2,7 @@
 import React from 'react';
 import { Text } from '@react-three/drei';
 import { useControls } from 'leva';
+import Converters from '../../converters';
 
 // eslint-disable-next-line max-lines-per-function
 const control = () => useControls('Text alignment', {
@@ -9,11 +10,9 @@ const control = () => useControls('Text alignment', {
 	anchorX: 'center',
 	anchorY: 'bottom',
 	color: 'red',
-	// font: 'https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxM.woff',
 	position: [-1, 0, 0],
 	rotation: [0, 0, 0],
 	outlineColor: '#ffd800',
-	outlineWidth: { value: 0.5, min: -0.5, max: 0.5, step: 0.1 },
 	outlineOpacity: { value: 1, min: 0, max: 1, step: 0.01 },
 	outlineOffsetX: { value: 0, min: -0.5, max: 0.5, step: 0.1 },
 	outlineOffsetY: { value: 0, min: -0.5, max: 0.5, step: 0.1 },
@@ -30,9 +29,8 @@ const control = () => useControls('Text alignment', {
 });
 
 // eslint-disable-next-line max-lines-per-function
-const AlignmentExample = () => {
+const AlignmentExample = (context) => {
 	const {
-		outlineWidth,
 		strokeWidth,
 		outlineOffsetX,
 		outlineOffsetY,
@@ -40,10 +38,11 @@ const AlignmentExample = () => {
 		outlineBlur,
 		...props
 	} = control();
+	const { tickToGlow } = Converters;
 
 	return (
 		<Text
-			outlineWidth={ outlineWidth / 100 }
+			outlineWidth={ tickToGlow(context) / 1000 }
 			strokeWidth={ strokeWidth / 100 }
 			strokeOpacity={ strokeOpacity / 10 }
 			outlineOffsetX={ outlineOffsetX / 10 }
