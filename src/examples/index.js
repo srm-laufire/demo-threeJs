@@ -8,8 +8,10 @@ import Torus from './torusModel';
 import TextDemo from './textDemo';
 import ThreeDHello from './threeDTextExample';
 import AlignmentExample from './sampleThreeD';
+import RotatingBooks from './books';
 
 const examples = {
+	RotatingBooks,
 	AlignmentExample,
 	TextDemo,
 	ThreeDHello,
