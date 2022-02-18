@@ -9,8 +9,10 @@ import TextDemo from './textDemo';
 import ThreeDHello from './threeDTextExample';
 import AlignmentExample from './sampleThreeD';
 import RotatingBooks from './books';
+import WireGeometry from './wireFrameGeometry';
 
 const examples = {
+	WireGeometry,
 	RotatingBooks,
 	AlignmentExample,
 	TextDemo,
