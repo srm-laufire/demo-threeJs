@@ -10,8 +10,10 @@ import ThreeDHello from './threeDTextExample';
 import AlignmentExample from './sampleThreeD';
 import RotatingBooks from './books';
 import WireGeometry from './wireFrameGeometry';
+import DifferentSpheres from './wobbleGeometry';
 
 const examples = {
+	DifferentSpheres,
 	WireGeometry,
 	RotatingBooks,
 	AlignmentExample,
