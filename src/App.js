@@ -18,7 +18,9 @@ const getInput = () => {
 		},
 		orbitControl: true,
 		plane: true,
+		backgroundColor: true,
 		directionalLight: true,
+		ambientLight: false,
 		Background: folder({
 			color: '#6fba93',
 			environment: false,
@@ -65,18 +67,18 @@ const App = (context) => {
 	const { x, y } = degToPos(degToRad(angle), distance);
 	const dirProps = { position: [x, y, 0], ...props };
 
-	const { Example, color, orbitControl, plane,
-		directionalLight, environment, preset } = appProps;
+	const { Example, color, orbitControl, plane, backgroundColor,
+		ambientLight, directionalLight, environment, preset } = appProps;
 	const { color: pColor, ...pProps } = planeProps;
 
 	return (
 		<div className="App" role="App">
 			<Canvas
-				style={ { background: color } }
+				style={ { background: backgroundColor && color } }
 				shadows={ true }
 			>
 				<Suspense fallback={ null }>
-					<ambientLight/>
+					{ ambientLight && <ambientLight/>}
 					{	directionalLight
 						&& <directionalLight { ...dirProps }/>}
 					<Example { ...context }/>

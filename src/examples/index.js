@@ -11,8 +11,10 @@ import AlignmentExample from './sampleThreeD';
 import RotatingBooks from './books';
 import WireGeometry from './wireFrameGeometry';
 import DifferentSpheres from './wobbleGeometry';
+import ThreePointLighting from './threePointLighting';
 
 const examples = {
+	ThreePointLighting,
 	DifferentSpheres,
 	WireGeometry,
 	RotatingBooks,
