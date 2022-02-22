@@ -13,9 +13,13 @@ import WireGeometry from './wireFrameGeometry';
 import DifferentSpheres from './wobbleGeometry';
 import ThreePointLighting from './threePointLighting';
 import ModelEvents from './modelEvents';
+import GroupEvents from './groupEvents';
+import CubeAndText from './cubeAndText';
 
 const examples = {
 	ModelEvents,
+	CubeAndText,
+	GroupEvents,
 	ThreePointLighting,
 	DifferentSpheres,
 	WireGeometry,
