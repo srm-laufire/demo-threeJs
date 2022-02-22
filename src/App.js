@@ -20,7 +20,7 @@ const getInput = () => {
 		plane: true,
 		backgroundColor: true,
 		directionalLight: true,
-		ambientLight: false,
+		ambientLight: true,
 		Background: folder({
 			color: '#6fba93',
 			environment: false,
