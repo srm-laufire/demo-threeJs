@@ -12,7 +12,7 @@ import RotatingBooks from './books';
 import WireGeometry from './wireFrameGeometry';
 import DifferentSpheres from './wobbleGeometry';
 import ThreePointLighting from './threePointLighting';
-import GroupEvents from './test';
+import GroupEvents from './groupEvents';
 
 const examples = {
 	GroupEvents,
