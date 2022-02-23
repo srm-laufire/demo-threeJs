@@ -17,7 +17,7 @@ const getInput = () => {
 			options: examples,
 		},
 		orbitControl: true,
-		plane: true,
+		plane: false,
 		backgroundColor: true,
 		directionalLight: true,
 		ambientLight: true,
