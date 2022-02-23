@@ -23,11 +23,11 @@ const ModelEvents = (context) => {
 	const { flightProps: { x: xFlight, y: yFlight,
 		z: zFlight, rotation, flight }} = control();
 	const flightGltf = useLoader(GLTFLoader,
-		`${ process.env.PUBLIC_URL }/flight.gltf`);
+		`${ process.env.PUBLIC_URL }/human.gltf`);
 	const gltfFlightProps = {
 		onClick: () => patchState({ clicked: !clicked }),
 		object: flightGltf.scene,
-		scale: 0.3,
+		scale: 1.5,
 		position: [xFlight, yFlight, zFlight],
 		rotation: clicked ? [2, 0, 0] : rotation,
 	};
