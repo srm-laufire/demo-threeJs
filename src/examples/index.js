@@ -14,8 +14,10 @@ import DifferentSpheres from './wobbleGeometry';
 import ThreePointLighting from './threePointLighting';
 import GroupEvents from './groupEvents';
 import ModelEvents from './modelEvents';
+import ColorGradingSphere from './colorGrading';
 
 const examples = {
+	ColorGradingSphere,
 	ModelEvents,
 	GroupEvents,
 	ThreePointLighting,
