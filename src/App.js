@@ -23,7 +23,7 @@ const getInput = () => {
 		ambientLight: true,
 		Background: folder({
 			color: '#6fba93',
-			environment: true,
+			environment: false,
 			preset: {
 				options: {
 					warehouse: 'warehouse',

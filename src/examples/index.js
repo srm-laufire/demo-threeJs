@@ -15,8 +15,10 @@ import ThreePointLighting from './threePointLighting';
 import GroupEvents from './groupEvents';
 import ModelEvents from './modelEvents';
 import ColorGradingSphere from './colorGrading';
+import HtmlMarker from './htmlMarker';
 
 const examples = {
+	HtmlMarker,
 	ColorGradingSphere,
 	ModelEvents,
 	GroupEvents,
