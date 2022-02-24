@@ -16,8 +16,10 @@ import GroupEvents from './groupEvents';
 import ModelEvents from './modelEvents';
 import ColorGradingSphere from './colorGrading';
 import HtmlMarker from './htmlMarker';
+import CubeAndText from './cubeAndText';
 
 const examples = {
+	CubeAndText,
 	HtmlMarker,
 	ColorGradingSphere,
 	ModelEvents,
