@@ -1,4 +1,3 @@
-/* eslint-disable complexity */
 /* eslint-disable max-lines-per-function */
 /* eslint-disable no-magic-numbers */
 import { React } from 'react';
@@ -6,7 +5,6 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useControls } from 'leva';
 import { peek } from '@laufire/utils/debug';
-// import { useGLTF, useTexture } from '@react-three/drei';
 
 const control = () => {
 	const flightProps = useControls('Flight', {
@@ -29,8 +27,6 @@ const control = () => {
 };
 
 const ModelEvents = (context) => {
-	// const { nodes } = useGLTF(`${ process.env.PUBLIC_URL }/stacy.glb`);
-	// const texture = useTexture(`${ process.env.PUBLIC_URL }/stacy.jpg`);
 	const { config: { clickColors }, state: { color },
 		patchState } = context;
 	const { flightProps: { x: xFlight, y: yFlight,
@@ -58,21 +54,6 @@ const ModelEvents = (context) => {
 
 	return (
 		<>
-			{/* <group scale={ 0.01 } position={ [2, 0, 0] } { ...stacyProps }>
-				<primitive
-					object={ nodes.mixamorigHips }
-				/>
-				<skinnedMesh
-					geometry={ nodes.stacy.geometry }
-					skeleton={ nodes.stacy.skeleton }
-				>
-					<meshStandardMaterial
-						map={ texture }
-						map-flipY={ false }
-						skinning={ true }
-					/>
-				</skinnedMesh>
-			</group> */}
 			<primitive { ...stacyProps }/>
 			{ flight && <primitive { ...gltfFlightProps }/>}
 			<mesh position={ [0, -2, 0] }>
