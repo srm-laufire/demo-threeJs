@@ -17,8 +17,12 @@ import ModelEvents from './modelEvents';
 import ColorGradingSphere from './colorGrading';
 import HtmlMarker from './htmlMarker';
 import CubeAndText from './cubeAndText';
+import TextExampleTwo from './textExampleTwo';
+import TextExampleOne from './textExampleOne';
 
 const examples = {
+	TextExampleOne,
+	TextExampleTwo,
 	CubeAndText,
 	HtmlMarker,
 	ColorGradingSphere,

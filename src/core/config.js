@@ -16,7 +16,12 @@ const config = {
 	],
 	clickColors: [
 		'red',
+		'yellow',
+	],
+	textClickColors: [
+		'red',
 		'green',
+		'blue',
 	],
 };
 
