@@ -14,6 +14,10 @@ const config = {
 		'yellow',
 		'blue',
 	],
+	clickColors: [
+		'red',
+		'green',
+	],
 };
 
 export default config;
