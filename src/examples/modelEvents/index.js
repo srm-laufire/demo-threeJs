@@ -5,6 +5,7 @@ import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useControls } from 'leva';
 import { peek } from '@laufire/utils/debug';
+import { useGLTF, useTexture } from '@react-three/drei';
 
 const control = () => {
 	const flightProps = useControls('Flight', {
@@ -20,13 +21,15 @@ const control = () => {
 		x: { value: 2, min: -2, max: 2, step: 0.2 },
 		y: { value: 0, min: -2, max: 2, step: 0.2 },
 		z: { value: 1.5, min: 1.5, max: 5, step: 0.2 },
-		rotation: [0, 0, 0],
+		rotation: [2, 0, 0],
 	});
 
 	return { flightProps, stacyProps };
 };
 
 const ModelEvents = (context) => {
+	const { nodes } = useGLTF(`${ process.env.PUBLIC_URL }/stacy.glb`);
+	const texture = useTexture(`${ process.env.PUBLIC_URL }/stacy.jpg`);
 	const { config: { clickColors }, state: { color },
 		patchState } = context;
 	const { flightProps: { x: xFlight, y: yFlight,
@@ -54,7 +57,21 @@ const ModelEvents = (context) => {
 
 	return (
 		<>
-			<primitive { ...stacyProps }/>
+			<group scale={ 0.01 } position={ [2, 0, 0] } { ...stacyProps }>
+				<primitive
+					object={ nodes.mixamorigHips }
+				/>
+				<skinnedMesh
+					geometry={ nodes.stacy.geometry }
+					skeleton={ nodes.stacy.skeleton }
+				>
+					<meshStandardMaterial
+						map={ texture }
+						map-flipY={ false }
+						skinning={ true }
+					/>
+				</skinnedMesh>
+			</group>
 			{ flight && <primitive { ...gltfFlightProps }/>}
 			<mesh position={ [0, -2, 0] }>
 				<planeBufferGeometry/>
