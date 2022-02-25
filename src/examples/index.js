@@ -19,8 +19,10 @@ import HtmlMarker from './htmlMarker';
 import CubeAndText from './cubeAndText';
 import TextExampleTwo from './textExampleTwo';
 import TextExampleOne from './textExampleOne';
+import TorusKnotGeometry from './torusknotGeometry';
 
 const examples = {
+	TorusKnotGeometry,
 	TextExampleOne,
 	TextExampleTwo,
 	CubeAndText,
