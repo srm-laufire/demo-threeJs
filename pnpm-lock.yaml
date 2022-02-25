@@ -4,6 +4,7 @@ specifiers:
   '@laufire/resist': ^0.0.5
   '@laufire/utils': ^2.9.2
   '@react-spring/three': 9.3.0
+  '@react-three/cannon': 2.5.0
   '@react-three/drei': ^8.4.0
   '@react-three/fiber': ^7.0.24
   '@testing-library/jest-dom': ^5.14.1
@@ -24,6 +25,7 @@ dependencies:
   '@laufire/resist': 0.0.5
   '@laufire/utils': 2.9.2
   '@react-spring/three': 9.3.0_cf2aded13363d1a067d2bf0a45020b6b
+  '@react-three/cannon': 2.5.0_219cd54b391a5f28fe99f6b525368df2
   '@react-three/drei': 8.8.1_df2ebc002bdcdc113364445b8716beea
   '@react-three/fiber': 7.0.26_219cd54b391a5f28fe99f6b525368df2
   leva: 0.9.18_react-dom@17.0.2+react@17.0.2
@@ -2247,6 +2249,21 @@ packages:
     resolution: {integrity: sha512-GGiIscTM+CEUNV52anj3g5FqAZKL2+eRKtvBOAlC99qGBbvJ3qTLImrUR/I3lXY7PRuLgzI6kh34quA1oUxWYQ==}
     dev: false
 
+  /@react-three/cannon/2.5.0_219cd54b391a5f28fe99f6b525368df2:
+    resolution: {integrity: sha512-2iIkXq95tlpdDPV8K7NoNfdUT8OASeWiWvggy8P3Wh1lAMqQWRB20G/d5vc8z1MEYs+vdyWa2PkLoXRdhJPUoQ==}
+    peerDependencies:
+      react: '>=17.0'
+      react-dom: '>=17.0'
+    dependencies:
+      cannon-es: 0.18.0
+      cannon-es-debugger: 0.1.4_cannon-es@0.18.0+three@0.136.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    transitivePeerDependencies:
+      - three
+      - typescript
+    dev: false
+
   /@react-three/drei/8.8.1_df2ebc002bdcdc113364445b8716beea:
     resolution: {integrity: sha512-3YOLk7C+t3oWrsFlQd4laeHsDND3srKcYn1Xj9Hiyo7WfHR/lLHdh01IlHLqdZED22a7MiYyNozZPWohnS0HSA==}
     peerDependencies:
@@ -4075,6 +4092,24 @@ packages:
 
   /caniuse-lite/1.0.30001241:
     resolution: {integrity: sha512-1uoSZ1Pq1VpH0WerIMqwptXHNNGfdl7d1cJUFs80CwQ/lVzdhTvsFZCeNFslze7AjsQnb4C85tzclPa1VShbeQ==}
+    dev: false
+
+  /cannon-es-debugger/0.1.4_cannon-es@0.18.0+three@0.136.0:
+    resolution: {integrity: sha512-RefSPWX6gDMQsx3UWoQpkGW3R03Wwn8p1JteexQUYxDC5DnOS3U3iKhns2vVpFp6Q3AKiSSmRf7NIXnGN8L0RA==}
+    peerDependencies:
+      cannon-es: 0.x.x
+      three: 0.x.x
+      typescript: '>=3.8'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      cannon-es: 0.18.0
+      three: 0.136.0
+    dev: false
+
+  /cannon-es/0.18.0:
+    resolution: {integrity: sha512-GiQ1bd0etZsMVSnUhNc+p+FEh0R/cULpp8uRSAhEK4Kax+y/31Au03m6h1h1xdDivAMnFg8YDwevHgzLynOHlw==}
     dev: false
 
   /capture-exit/2.0.0:

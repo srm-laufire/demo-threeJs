@@ -21,8 +21,10 @@ import TextExampleTwo from './textExampleTwo';
 import TextExampleOne from './textExampleOne';
 import TorusKnotGeometry from './torusknotGeometry';
 import HtmlAnnotations from './htmlAnnotations';
+import SimplePhysics from './simplePhysics';
 
 const examples = {
+	SimplePhysics,
 	HtmlAnnotations,
 	TorusKnotGeometry,
 	TextExampleOne,

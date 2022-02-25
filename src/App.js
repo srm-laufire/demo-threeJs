@@ -18,8 +18,8 @@ const getInput = () => {
 		},
 		orbitControl: true,
 		plane: false,
-		backgroundColor: true,
-		directionalLight: true,
+		backgroundColor: false,
+		directionalLight: false,
 		ambientLight: true,
 		Background: folder({
 			color: '#6fba93',
