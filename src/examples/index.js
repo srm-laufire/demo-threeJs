@@ -20,8 +20,10 @@ import CubeAndText from './cubeAndText';
 import TextExampleTwo from './textExampleTwo';
 import TextExampleOne from './textExampleOne';
 import TorusKnotGeometry from './torusknotGeometry';
+import HtmlAnnotations from './htmlAnnotations';
 
 const examples = {
+	HtmlAnnotations,
 	TorusKnotGeometry,
 	TextExampleOne,
 	TextExampleTwo,
