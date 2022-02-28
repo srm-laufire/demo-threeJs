@@ -22,8 +22,10 @@ import TextExampleOne from './textExampleOne';
 import TorusKnotGeometry from './torusknotGeometry';
 import HtmlAnnotations from './htmlAnnotations';
 import SimplePhysics from './simplePhysics';
+import TriggerMesh from './triggerMesh';
 
 const examples = {
+	TriggerMesh,
 	SimplePhysics,
 	HtmlAnnotations,
 	TorusKnotGeometry,
